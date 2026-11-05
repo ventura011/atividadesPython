@@ -1,0 +1,72 @@
+import json
+
+def carregar_dados():
+    try:
+        with open("jogadores.json", "r", encoding="utf-8") as arquivo:
+            return json.load(arquivo)
+    except FileNotFoundError:
+        return []
+
+def salvar_dados(jogadores):
+    with open("jogadores.json", "w", encoding="utf-8") as arquivo:
+        json.dump(jogadores, arquivo, indent=4, ensure_ascii=False)
+
+def cadastrar_jogador():
+    jogadores = carregar_dados()
+
+    nome = input("Nome do jogador: ")
+    idade = int(input("Idade: "))
+    pontuacao = int(input("Pontuação: "))
+
+    jogador = {
+        "nome": nome,
+        "idade": idade,
+        "pontuacao": pontuacao
+    }
+
+    jogadores.append(jogador)
+    salvar_dados(jogadores)
+
+    print("Jogador cadastrado com sucesso!")
+
+def ver_ranking():
+    jogadores = carregar_dados()
+    jogadores.sort(key=lambda x: x["pontuacao"], reverse=True)
+
+    print("\n=== RANKING ===")
+
+    posicao = 1
+    for jogador in jogadores:
+        print(f'{posicao} - {jogador["nome"]} - {jogador["pontuacao"]}')
+        posicao += 1
+
+def relatorio():
+    jogadores = carregar_dados()
+
+    if len(jogadores) == 0:
+        print("Nenhum jogador cadastrado!")
+        return
+
+    total = 0
+    maior = float("-inf")
+    melhor_jogador = ""
+
+    for jogador in jogadores:
+        pontos = jogador["pontuacao"]
+        total += pontos
+
+        if pontos > maior:
+            maior = pontos
+            melhor_jogador = jogador["nome"]
+
+    media = total / len(jogadores)
+
+    print("\n=== RELATÓRIO ===")
+    print(f"Pontuação média: {media:.2f}")
+    print(f"Soma de todos os pontos: {total}")
+    print(f"Melhor jogador: {melhor_jogador} - {maior}")
+
+
+cadastrar_jogador()
+ver_ranking()
+relatorio()

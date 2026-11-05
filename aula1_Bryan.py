@@ -1,4 +1,4 @@
-#Data/30/09  Nathan Perpetuo
+#Data/30/09  Bryan Ventura
 
 nome = input("Digite seu nome: ")
 pontuacao = input("Digite sua pontuação: ")

@@ -1,4 +1,4 @@
-#Data: 01/10  Nathan Perpetuo 
+#Data: 01/10  Bryan Ventura
 
 def cadastrarJogador():
     nome = input("Nome: ")

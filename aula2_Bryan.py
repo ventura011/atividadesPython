@@ -1,4 +1,4 @@
-#Data: 30/09  Nathan Perpetuo
+#Data: 30/09  Bryan Ventura
 
 print('1 Cadastrar Jogador')
 print('2 Ver ranking')

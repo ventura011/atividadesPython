@@ -3,5 +3,40 @@
         "nome": "Nathan",
         "idade": 49,
         "pontuacao": 1500
+    },
+    {
+        "nome": "Brandon",
+        "idade": 34,
+        "pontuacao": 1000
+    },
+    {
+        "nome": "Lais",
+        "idade": 34,
+        "pontuacao": 600
+    },
+    {
+        "nome": "Vitor",
+        "idade": 100,
+        "pontuacao": 15
+    },
+    {
+        "nome": "rian",
+        "idade": 20,
+        "pontuacao": 10
+    },
+    {
+        "nome": "d",
+        "idade": 1,
+        "pontuacao": 3
+    },
+    {
+        "nome": "joao",
+        "idade": 22,
+        "pontuacao": 999
+    },
+    {
+        "nome": "Lucas",
+        "idade": 34,
+        "pontuacao": 700
     }
 ]
